@@ -1,0 +1,32 @@
+{
+    "name": "bashunit",
+    "version": "0.0.1",
+    "description": "Bash Unit, a simple TAP",
+    "keywords": ["bash", "unit", "test", "tap", "tdd"],
+    "bugs": {"url": "http://github.com/bilardi/bashunit/issues"},
+    "license": "MIT",
+    "bin": {
+	"bashunit": "./bashunit.sh"
+    },
+    "man": "./bashunit.1"
+    "repository": {
+	"type": "git",
+	"url": "http://github.com/bilardi/bashunit"
+    },
+    "scripts": {
+	"install": "make install",
+	"uninstall": "make uninstall",
+	"test": "make test",
+	"start": "./bashunit.sh",
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+	"curl": "*"
+    },
+    "os": [ "linux" ],
+    "preferGlobal": true,
+    "contributors": [
+	{"name": "Alessandra Bilardi", "email": "alessandra.bilardi@gmail.com"}
+    ]
+}
