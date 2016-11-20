@@ -1,0 +1,65 @@
+.\" Generated with Ronnjs 0.3.8
+.\" http://github.com/kapouer/ronnjs/
+.
+.TH "BASHUNIT\.SH" "1" "November 2016" "" ""
+.
+.SH "NAME"
+\fBbashunit.sh\fR \-\- Test library
+.
+.SH "SYNOPSIS"
+\fBbashunit\.sh\fR [\-hV]
+.
+.SH "OPTIONS"
+  \fB\-h, \-\-help\fR              display this message
+.
+.P
+  \fB\-V, \-\-version\fR           output version
+.
+.P
+  \fB\-t, \-\-test\fR              path of your test file or directory
+.
+.SH "USAGE"
+.
+.nf
+\|\./bashunit\.sh \-t [file|directory]
+.
+.fi
+.
+.P
+  Use the follow functions have three arguments: message, result, [value]
+.
+.IP "" 4
+.
+.nf
+assertLike # to compare result with a pattern and the comparison is true
+assertNotLike # to compare result with a pattern and the comparison is false
+assertSame # to compare result with a string and the comparison is true
+assertNotSame # to compare result with a string and the comparison is false
+assertNull # the result is null or zero\-length 
+assertNotNull # the result is not null or no empty
+assertTrue # the result is true
+assertFalse # the result is false
+.
+.fi
+.
+.IP "" 0
+.
+.SH "AUTHOR"
+.
+.IP "\(bu" 4
+Alessandra Bilardi \fIalessandra\.bilardi@gmail\.com\fR
+.
+.IP "" 0
+.
+.SH "REPORTING BUGS"
+.
+.IP "\(bu" 4
+https://github\.com/bilardi/bashunit/issues
+.
+.IP "" 0
+.
+.SH "SEE ALSO"
+  \fBtest\fR(1), \fBsource\fR(1)
+.
+.SH "LICENSE"
+  MIT (C) Copyright Alessandra Bilardi 2016
