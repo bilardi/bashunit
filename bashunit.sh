@@ -9,7 +9,7 @@
 # This script contains the basic functions for running your tests
 
 # initialize
-VERSION="0.8.0"
+VERSION="0.8.1"
 PASSED=0
 FAILED=0
 
@@ -48,7 +48,7 @@ bashunit.sh(1) -- Test library
 
     ./bashunit.sh -t [file|directory]
 
-  Use the follow functions have three arguments: message, result, [value]
+  Use the follow functions have three arguments: message result [value]
 
     assertLike # to compare result with a pattern and the comparison is true
 
@@ -66,13 +66,15 @@ bashunit.sh(1) -- Test library
 
     assertFalse # the result is false
 
+  See examples in https://raw.githubusercontent.com/bilardi/bashunit/0.8.1/test.sh
+
 ## AUTHOR
 
-  - Alessandra Bilardi <alessandra.bilardi@gmail.com>
+  Alessandra Bilardi <alessandra.bilardi@gmail.com>
 
 ## REPORTING BUGS
 
-  - https://github.com/bilardi/bashunit/issues
+  https://github.com/bilardi/bashunit/issues
 
 ## SEE ALSO
 
