@@ -9,7 +9,7 @@
 # This script contains the basic functions for running your tests
 
 # initialize
-VERSION="0.0.1"
+VERSION="0.8.0"
 PASSED=0
 FAILED=0
 
@@ -93,7 +93,7 @@ EOF
 # Returns:
 #   mixed: string: error message
 function assert {
-    if [ $2 ]; then
+    if [ $2 -eq 0 ]; then
 	PASSED=$(( $PASSED + 1 ))
     else
 	FAILED=$(( $FAILED + 1 ))
@@ -110,7 +110,8 @@ function assert {
 # Returns:
 #   mixed: string: error message
 function assertLike {
-    assert $1 [ $2 =~ $3 ]
+    [[ "$2" =~ $3 ]]
+    assert "$1" $?
 }
 
 # Test if result not contains pattern
@@ -122,7 +123,8 @@ function assertLike {
 # Returns:
 #   mixed: string: error message
 function assertNotLike {
-    assert $1 [ $2 !~ $3 ]
+    [[ ! "$2" =~ $3 ]]
+    assert "$1" $?
 }
 
 # Test if result is the same with value
@@ -134,7 +136,8 @@ function assertNotLike {
 # Returns:
 #   mixed: string: error message
 function assertSame {
-    assert $1 [ "$2" == "$3" ]
+    [[ "$2" == "$3" ]]
+    assert "$1" $?
 }
 
 # Test if result is not the same with value
@@ -146,7 +149,8 @@ function assertSame {
 # Returns:
 #   mixed: string: error message
 function assertNotSame {
-    assert $1 [ "$2" != "$3" ]
+    [[ "$2" != "$3" ]]
+    assert "$1" $?
 }
 
 # Test if result is null or zero length
@@ -157,7 +161,8 @@ function assertNotSame {
 # Returns:
 #   mixed: string: error message
 function assertNull {
-    assert $1 [ -z "$2" ]
+    [[ -z "$2" ]]
+    assert "$1" $?
 }
 
 # Test if result is not null
@@ -168,7 +173,8 @@ function assertNull {
 # Returns:
 #   mixed: string: error message
 function assertNotNull {
-    assert $1 [ -n "$2" ]
+    [[ -n "$2" ]]
+    assert "$1" $?
 }
 
 # Test if result is true
@@ -179,7 +185,8 @@ function assertNotNull {
 # Returns:
 #   mixed: string: error message
 function assertTrue {
-    assert $1 [ "$2" ]
+    [[ "$2" ]]
+    assert "$1" $?
 }
 
 # Test if result is false
@@ -190,7 +197,8 @@ function assertTrue {
 # Returns:
 #   mixed: string: error message
 function assertFalse {
-    assert $1 [ ! "$2" ]
+    [[ ! "$2" ]]
+    assert "$1" $?
 }
 
 # Load test scripts
@@ -199,14 +207,20 @@ function assertFalse {
 #   path: string: file or directory of test scripts
 function loadTest {
     if [ -d "$1" ]; then
+	# todo: it does not work
 	ls $1 | while read f; do
 		    if [ -e $1/$f ]; then
+			# echo $1/$f
 			source $1/$f
 		    fi
-		  done
+		    # echo $PASSED, $FAILED # print 8, 8
+		done
     else
-	source $1
+	if [ -e $1 ]; then
+	    source $1
+	fi
     fi
+    # echo $PASSED, $FAILED # print 0, 0
 }
 
 # main

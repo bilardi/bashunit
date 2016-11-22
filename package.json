@@ -1,6 +1,6 @@
 {
     "name": "bashunit",
-    "version": "0.0.1",
+    "version": "0.8.0",
     "description": "Bash Unit, a simple TAP",
     "keywords": ["bash", "unit", "test", "tap", "tdd"],
     "bugs": {"url": "http://github.com/bilardi/bashunit/issues"},
