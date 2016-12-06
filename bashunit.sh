@@ -9,7 +9,7 @@
 # This script contains the basic functions for running your tests
 
 # initialize
-VERSION="0.8.1"
+VERSION="0.8.2"
 PASSED=0
 FAILED=0
 
@@ -34,7 +34,7 @@ bashunit.sh(1) -- Test library
 
 ## SYNOPSIS
 
-\`bashunit.sh\` [-hV]
+\`bashunit.sh\` [-hVt]
 
 ## OPTIONS
 

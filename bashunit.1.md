@@ -3,7 +3,7 @@ bashunit.sh(1) -- Test library
 
 ## SYNOPSIS
 
-`bashunit.sh` [-hV]
+`bashunit.sh` [-hVt]
 
 ## OPTIONS
 

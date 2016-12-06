@@ -7,10 +7,6 @@ It is part of the [educational repositories](https://github.com/pandle/materials
 
 The package is self-consistent: if you want integrate it in your project, add the bashunit.sh file where you want into your code.
 
-Test installation
-
-    make test
-
 Global installation
 
     make install
@@ -42,6 +38,10 @@ Create man (using [kapouer/ronnjs](https://github.com/kapouer/ronnjs))
 Test it-self
 
     ./bashunit.sh --test test.sh
+
+or
+
+    make test
 
 ## License
 
