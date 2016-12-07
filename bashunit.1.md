@@ -35,7 +35,7 @@ bashunit.sh(1) -- Test library
 
     assertFalse # the result is false
 
-  See examples in https://raw.githubusercontent.com/bilardi/bashunit/0.8.1/test.sh
+  See examples in https://raw.githubusercontent.com/bilardi/bashunit/master/test.sh
 
 ## AUTHOR
 
